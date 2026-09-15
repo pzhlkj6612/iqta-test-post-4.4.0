@@ -12,7 +12,7 @@ jobs:
     steps:
       # https://github.com/Kulitorum/Decenza/actions/runs/34901220934/job/104168353995#step:8:226
       - name: Install Qt for Android
-        uses: jurplel/install-qt-action@v4
+        uses: jurplel/install-qt-action@v4.3.1
         with:
           setup-python: false
           version: 6.11.2
