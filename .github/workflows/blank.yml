@@ -32,3 +32,5 @@ jobs:
           documentation: false
           examples: false
           use-official: false
+          # workaround from https://github.com/jurplel/install-qt-action/issues/372
+          host: 'all_os'
