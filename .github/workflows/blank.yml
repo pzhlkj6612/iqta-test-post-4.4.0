@@ -1,0 +1,34 @@
+# https://github.com/Kulitorum/Decenza/blob/c3dd536e9fa9951020ce4bc617bc981d18f9d730/.github/workflows/android-release.yml
+name: CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      # https://github.com/Kulitorum/Decenza/actions/runs/34901220934/job/104168353995#step:8:226
+      - name: Install Qt for Android
+        uses: jurplel/install-qt-action@v4
+        with:
+          setup-python: false
+          version: 6.11.2
+          target: android
+          arch: android_arm64_v8a
+          modules: qtquick3d qtshadertools qtgraphs qtconnectivity qtmultimedia qtpositioning qtspeech qtwebsockets qtimageformats qtcanvaspainter
+          install-deps: false
+          cache: true
+          cache-key-prefix: qt-android-v1
+          add-tools-to-path: true
+          set-env: true
+          no-qt-binaries: false
+          tools-only: false
+          aqtversion: ==3.3.*
+          py7zrversion: ==1.1.0
+          source: false
+          documentation: false
+          examples: false
+          use-official: false
